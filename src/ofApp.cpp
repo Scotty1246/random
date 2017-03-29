@@ -9,7 +9,7 @@ int xmin = 0, xmax = 1200, ymin = 0, ymax = 970;
 random_device rd;
 mt19937 eng(rd());
 
-uniform_int_distribution<int> x_dist(xmin,ymax);
+uniform_int_distribution<int> x_dist(xmin,xmax);
 uniform_int_distribution<int> y_dist(ymin,ymax);
 
 for(int i = 0; i < 20; i++)
