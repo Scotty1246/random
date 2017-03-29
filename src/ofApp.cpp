@@ -5,12 +5,12 @@
 void ofApp::setup(){
 jewel.load("diamond.png");// image to use (must be stored in "random/bin/data" folder)
 //X = {500, 1000, 30, 100, 300, 200, 750, 380 };// set of x-coordinates for jewel
-int xmin = 0, xmax = 1200, ymin = 0, ymax = 970;
+float xmean = 1000.0f, xsd = 15.0f, ymean = 800.0f, ysd = 15.0f;
 random_device rd;
 mt19937 eng(rd());
 
-uniform_int_distribution<int> x_dist(xmin,xmax);
-uniform_int_distribution<int> y_dist(ymin,ymax);
+normal_distribution< > x_dist(xmean,xsd);
+normal_distribution< > y_dist(ymean,ysd);
 
 for(int i = 0; i < 20; i++)
 {
