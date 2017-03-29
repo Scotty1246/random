@@ -1,10 +1,23 @@
 #include "ofApp.h"
+#include <random>
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 jewel.load("diamond.png");// image to use (must be stored in "random/bin/data" folder)
-X = {500, 1000, 30, 100, 300, 200, 750, 380 };// set of x-coordinates for jewel
-Y = {630, 400, 900,40, 200, 0, 90, 30}; //set of y-coordinates for jewel
+//X = {500, 1000, 30, 100, 300, 200, 750, 380 };// set of x-coordinates for jewel
+int xmin = 0, xmax = 1200, ymin = 0, ymax = 970;
+random_device rd;
+mt19937 eng(rd());
+
+uniform_int_distribution<int> x_dist(xmin,ymax);
+uniform_int_distribution<int> y_dist(ymin,ymax);
+
+for(int i = 0; i < 20; i++)
+{
+	X.push_back(x_dist(eng));
+	Y.push_back(y_dist(eng));	
+}
+//Y = {630, 400, 900,40, 200, 0, 90, 30}; //set of y-coordinates for jewel
 }
 
 //--------------------------------------------------------------
